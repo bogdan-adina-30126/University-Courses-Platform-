@@ -1,2 +1,2 @@
-# University-Courses-Platform-
-Proiect Platformă Cursuri Universitare cu Modul AI pentru Secretariat.
+# University-Courses-Platform
+This repository contains the upcoming project **University Courses Platform**
