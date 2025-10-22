@@ -1,9 +1,6 @@
 package com.example.demo.db;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
@@ -17,7 +14,9 @@ public class Student {
     private String name;
     private String email;
     private Integer courseId;
-
+    @ManyToOne
+    @JoinColumn(name = "courseId", insertable = false, updatable = false)
+    private Course course;
 
     public Student() {
 

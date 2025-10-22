@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
+import java.util.List;
+
 @Entity
 @Data
 @AllArgsConstructor
@@ -15,8 +17,10 @@ public class Course {
     private String name;
     private Integer departmentId;
     @ManyToOne
-    //@JoinColumn(name="course id", nultable = true )
-    Department department1;
+    @JoinColumn(name="course id",  insertable = false, updatable = false)
+    Department department;
+    @OneToMany(mappedBy = "course")
+    private List<Student> students;
 
     public Course() {
 

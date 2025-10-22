@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
+import java.util.List;
+
 
 @Entity
 @Data
@@ -14,6 +16,8 @@ public class Department {
     private Integer id;
     private String name;
 
+@OneToMany(mappedBy = "department")
+private List<Course> courses;
 
     public Department() {
 
