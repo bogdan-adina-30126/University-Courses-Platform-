@@ -2,10 +2,12 @@ package com.example.demo.service;
 
 import com.example.demo.db.Course;
 import com.example.demo.db.CourseRepository;
+import com.example.demo.db.Student;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -45,4 +47,22 @@ public class CourseService {
         }
         courseRepository.delete(course);
     }
+    @Transactional
+    public Course addStudentToCourse(Integer courseId, Student student) {
+        Course course = courseRepository.findById(courseId).orElse(null);
+        if (course == null) return null;
+
+        // Setăm ambele — ca să fie sincronizate
+        student.setCourseId(courseId);
+        student.setCourse(course);
+
+        if (course.getStudents() == null) {
+            course.setStudents(new ArrayList<>());
+        }
+
+        course.getStudents().add(student);
+        return courseRepository.save(course);
+    }
+
+
 }

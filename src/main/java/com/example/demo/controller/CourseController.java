@@ -1,5 +1,6 @@
 package com.example.demo.controller;
 
+import com.example.demo.db.Student;
 import com.example.demo.service.CourseService;
 import com.example.demo.db.Course;
 import com.example.demo.db.CourseRepository;
@@ -44,4 +45,7 @@ public class CourseController {
     public void deleteCourse(@PathVariable Integer id) {
         courseService.deleteCourse(id);
     }
+    // 🔹 Adaugă un student la un curs
+
+
 }
