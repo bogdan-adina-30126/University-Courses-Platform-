@@ -63,5 +63,15 @@ public class StudentService
     public List<Student> getStudentsByCourse(Integer courseId) {
         return studentRepository.findByCourseId(courseId);
     }
+    public List<Student> getStudentsByCourseReindexed(Integer courseId) {
+        List<Student> students = studentRepository.findByCourseId(courseId);
+
+        // Reindexăm ID-urile pentru afișarea în frontend
+        for (int i = 0; i < students.size(); i++) {
+            students.get(i).setId(i + 1);
+        }
+
+        return students;
+    }
 
 }
