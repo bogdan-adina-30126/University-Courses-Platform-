@@ -23,14 +23,14 @@ A full-stack application for managing university courses, students, and departme
 ##  Technology Stack
 
 ### Backend (Spring Boot)
-```
+
 - Java 
 - Spring Boot
 - Spring Data JPA
 - MySQL Database
 - Maven
 ### Frontend (React)
-```
+
 - React 
 - JavaScript 
 - CSS3
@@ -38,12 +38,12 @@ A full-stack application for managing university courses, students, and departme
 - React Hooks
 
 ### Desktop Client (C#)
-```
+
 - .NET 8
 - WinForms
 - System.Text.Json
 - HttpClient
-```
+
 
 
 ##  Database Schema
